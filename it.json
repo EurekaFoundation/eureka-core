@@ -1,0 +1,33 @@
+{
+  "suite.name": "Eureka Suite",
+  "suite.tagline": "Software libero, semplice, per tutti.",
+  "suite.viator": "Browser web",
+  "suite.libellus": "Quaderno digitale",
+  "suite.charta": "Impaginazione di volantini e brochure",
+  "suite.kalendae": "Calendario",
+
+  "menu.file": "&File",
+  "menu.edit": "&Modifica",
+  "menu.view": "&Visualizza",
+  "menu.help": "&Aiuto",
+  "menu.about": "Informazioni su {app}",
+  "menu.check_updates": "Controlla aggiornamenti",
+  "menu.quit": "Esci",
+
+  "about.version": "Versione {version}",
+  "about.part_of": "Fa parte di {suite}",
+  "about.license": "Distribuito con licenza GNU GPL v3.",
+  "about.website": "Sito del progetto",
+
+  "update.title": "Aggiornamento disponibile",
+  "update.text": "È disponibile {app} {new} (stai usando la {current}).",
+  "update.download": "Scarica",
+  "update.skip": "Salta questa versione",
+  "update.later": "Più tardi",
+  "update.none": "Stai usando la versione più recente di {app}.",
+  "update.error": "Impossibile controllare gli aggiornamenti. Verifica la connessione.",
+
+  "theme.system": "Come il sistema",
+  "theme.light": "Chiaro",
+  "theme.dark": "Scuro"
+}

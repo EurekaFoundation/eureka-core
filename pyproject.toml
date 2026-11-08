@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eureka-core"
+version = "0.1.0"
+description = "Libreria condivisa di Eureka Suite: tema, impostazioni, traduzioni, aggiornamenti"
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Francesco Franchino" }]
+requires-python = ">=3.10"
+dependencies = [
+    "PySide6>=6.6",
+    "platformdirs>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/EurekaFoundation/eureka-core"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+eureka_core = ["locales/*.json"]

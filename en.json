@@ -1,0 +1,33 @@
+{
+  "suite.name": "Eureka Suite",
+  "suite.tagline": "Free, simple software for everyone.",
+  "suite.viator": "Web browser",
+  "suite.libellus": "Digital notebook",
+  "suite.charta": "Flyer and brochure layout",
+  "suite.kalendae": "Calendar",
+
+  "menu.file": "&File",
+  "menu.edit": "&Edit",
+  "menu.view": "&View",
+  "menu.help": "&Help",
+  "menu.about": "About {app}",
+  "menu.check_updates": "Check for updates",
+  "menu.quit": "Quit",
+
+  "about.version": "Version {version}",
+  "about.part_of": "Part of {suite}",
+  "about.license": "Released under the GNU GPL v3 license.",
+  "about.website": "Project website",
+
+  "update.title": "Update available",
+  "update.text": "{app} {new} is available (you are using {current}).",
+  "update.download": "Download",
+  "update.skip": "Skip this version",
+  "update.later": "Later",
+  "update.none": "You are using the latest version of {app}.",
+  "update.error": "Could not check for updates. Please check your connection.",
+
+  "theme.system": "Follow system",
+  "theme.light": "Light",
+  "theme.dark": "Dark"
+}
