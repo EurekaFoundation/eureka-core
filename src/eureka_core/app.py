@@ -37,16 +37,31 @@ class EurekaApp(QApplication):
         self.settings = Settings(app_id, app_defaults)
         self.tr_ = Translator(self.settings.suite["language"], locales_dir)
         self.apply_theme()
+        try:   # con il tema "system" segue il cambio chiaro/scuro del sistema
+            self.styleHints().colorSchemeChanged.connect(self._system_scheme_changed)
+        except AttributeError:   # Qt < 6.5
+            pass
 
         self.aboutToQuit.connect(self.settings.save)
         self._checker = None
 
     # --- aspetto e lingua ----------------------------------------------------
 
+    @property
+    def theme(self) -> str:
+        mode = self.settings.suite.get("theme", "system")
+        return mode if mode in theme.MODES else "system"
+
     def apply_theme(self, mode: str | None = None) -> None:
+        """Senza argomenti riapplica il tema salvato; con un modo lo cambia e lo salva."""
         if mode:
             self.settings.suite["theme"] = mode
-        theme.apply_theme(self, self.settings.suite["theme"], self.info.accent)
+            self.settings.save()   # così lo vedono subito anche gli altri programmi
+        theme.apply_theme(self, self.theme, self.info.accent)
+
+    def _system_scheme_changed(self, *_):
+        if self.theme == "system":
+            self.apply_theme()
 
     def set_language(self, language: str) -> None:
         """Cambia lingua. I testi già mostrati si aggiornano al riavvio."""
@@ -55,8 +70,9 @@ class EurekaApp(QApplication):
 
     # --- finestre comuni -----------------------------------------------------
 
-    def show_about(self, parent=None) -> None:
-        AboutDialog(self.info, self.version, self.tr_, parent).exec()
+    def show_about(self, parent=None, extra: str = "") -> None:
+        """extra: testo HTML aggiuntivo specifico del programma."""
+        AboutDialog(self.info, self.version, self.tr_, parent, extra).exec()
 
     # --- aggiornamenti -------------------------------------------------------
 

@@ -1,6 +1,6 @@
 """eureka-core: libreria condivisa di Eureka Suite."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .suite import SUITE_NAME, SuiteApp, get_app, APPS  # noqa: F401
 from .settings import Settings  # noqa: F401

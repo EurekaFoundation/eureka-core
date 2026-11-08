@@ -12,7 +12,7 @@ from .suite import SUITE_NAME, SuiteApp
 
 
 class AboutDialog(QDialog):
-    def __init__(self, info: SuiteApp, version: str, tr, parent=None):
+    def __init__(self, info: SuiteApp, version: str, tr, parent=None, extra: str = ""):
         super().__init__(parent)
         self.setWindowTitle(tr("menu.about", app=info.name).replace("&", ""))
         self.setMinimumWidth(340)
@@ -29,10 +29,14 @@ class AboutDialog(QDialog):
             tr("about.version", version=version),
             tr("about.part_of", suite=f"<b>{SUITE_NAME}</b>"),
             f"<i>{tr('suite.tagline')}</i>",
+            extra,
             tr("about.license"),
             f"<a href='{info.url}'>{tr('about.website')}</a>",
         ):
+            if not text:
+                continue
             lbl = QLabel(text)
+            lbl.setTextInteractionFlags(Qt.TextBrowserInteraction)
             lbl.setAlignment(Qt.AlignCenter)
             lbl.setOpenExternalLinks(True)
             lbl.setWordWrap(True)

@@ -25,10 +25,10 @@ class SuiteApp:
 APPS: dict[str, SuiteApp] = {
     a.id: a
     for a in (
-        SuiteApp("viator", "Viator", "#2563EB", "suite.viator"),
+        SuiteApp("viator", "Viator", "#7C3AED", "suite.viator"),
         SuiteApp("libellus", "Libellus", "#16A34A", "suite.libellus"),
         SuiteApp("charta", "Charta", "#EA580C", "suite.charta"),
-        SuiteApp("kalendae", "Kalendae", "#DC2626", "suite.kalendae"),
+        SuiteApp("kalendae", "Kalendae", "#1A73E8", "suite.kalendae"),
     )
 }
 

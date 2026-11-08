@@ -81,8 +81,13 @@ dependencies = ["eureka-core >= 0.1"]
 Finché `eureka-core` non è su PyPI, si può puntare direttamente al repository:
 
 ```toml
-dependencies = ["eureka-core @ git+https://github.com/EurekaFoundation/eureka-core@v0.1.0"]
+dependencies = ["eureka-core @ git+https://github.com/EurekaFoundation/eureka-core@v0.1.1"]
 ```
+
+### Pacchetti con PyInstaller
+
+PyInstaller non include da solo i file di traduzione del core: aggiungi
+`--collect-data eureka_core` agli argomenti di build.
 
 ## Versioni
 
